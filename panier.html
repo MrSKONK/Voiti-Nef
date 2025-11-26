@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voiti Nèf - Paiement Sécurisé</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="stylesheet" href="style 1.css">
+    <link rel="stylesheet" href="style 2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <script src="script 1.js"></script>
+</head>
+<body>
+    <div class="main-container">
+        <nav class="navbar">
+            <div class="navdiv">
+                <div class="logo">
+                    <img src="logo.png" alt="logo du site Voiti Nèf">
+                </div>
+                <ul class="nav">
+                    <li><a href="index.html"><i class="fa fa-home"></i> Accueil </a></li>
+                    <li><a href="nos voitures.html"><i class="fa fa-car"></i> Nos voitures </a></li>
+                    <li><a href="à propos.html"><i class="fa fa-user"></i> À Propos </a></li>
+                    <li><a href="panier.html"><i class="fas fa-shopping-cart"></i> Panier </a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="section-title">
+            <h1>Péyé Loto Aw</h1>
+        </div>
+        <div class="container">
+            <div class="sidebar">
+                <ul class="progress-steps">
+                    <li class="progress-step active" data-step="1">
+                        <div class="step-icon">
+                            <svg viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"/>
+                            </svg>
+                        </div>
+                        <span><strong>Panier</strong></span>
+                    </li>
+                    <li class="progress-step" data-step="2">
+                        <div class="step-icon">
+                            <svg viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M4 4a2 2 0 012-2h8a2 2 0 012 2v12a2 2 0 01-2 2H6a2 2 0 01-2-2V4z"/>
+                            </svg>
+                        </div>
+                        <span><strong>Livraison</strong></span>
+                    </li>
+                    <li class="progress-step" data-step="3">
+                        <div class="step-icon">
+                            <svg viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4z"/>
+                                <path fill-rule="evenodd" d="M18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z"/>
+                            </svg>
+                        </div>
+                        <span><strong>Paiement</strong></span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="main-content">
+                <!-- Étape 1: Panier -->
+                <div class="step-content active" id="step1">
+                    <h2>Vérification du panier</h2>
+                    <div class="cart-item">
+                        <img src="voitures/audi_a3.png" alt="Produit">
+                        <div class="cart-item-details">
+                            <h3>Audi A3</h3>
+                            <p>
+                                <br>
+                                Année : 2023 <br>
+                                Cylindrée : 2.0L <br>
+                                Puissance : 150ch <br>
+                                Carburant : Diesel <br>
+                                <br>
+                            </p>
+                            <p class="cart-item-price">Sous-total: 35.000 €</p>
+                        </div>
+                    </div>
+                    <button onclick="nextStep(2)">Continuer vers la livraison</button>
+                </div>
+
+                <!-- Étape 2: Livraison -->
+                <div class="step-content" id="step2">
+                    <h2>Adresse de livraison</h2>
+                    <form id="shipping-form">
+                        <div class="form-group">
+                            <label for="name">Nom complet</label>
+                            <input type="text" id="name" required placeholder="Jean Dupont">
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Adresse</label>
+                            <input type="text" id="address" required placeholder="">
+                        </div>
+                        <div class="card-grid">
+                            <div class="form-group">
+                                <label for="postal">Code postal</label>
+                                <input type="text" id="postal" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="city">Ville</label>
+                                <input type="text" id="city" required>
+                            </div>
+                        </div>
+                        <button type="button" onclick="nextStep(3)">Continuer vers le paiement</button>
+                    </form>
+                </div>
+
+                <!-- Étape 3: Paiement -->
+                <div class="step-content" id="step3">
+                    <h2>Paiement</h2>
+                    <div class="payment-methods">
+                        <img src="visa.png" alt="Visa">
+                        <img src="mastercard.png" alt="Mastercard">
+                        <img src="americanexpress.png" alt="American Express">
+                        <img src="revolut.png" alt="Revolut">
+                        <img src="bitcoin.png" alt="Bitcoin">
+                    </div>
+                    <form id="payment-form">
+                        <div class="form-group">
+                            <label for="card-number">Numéro de carte</label>
+                            <input type="text" id="card-number" required placeholder="1234 5678 9012 3456">
+                        </div>
+                        <div class="card-grid">
+                            <div class="form-group">
+                                <label for="expiry">Date d'expiration</label>
+                                <input type="text" id="expiry" required placeholder="MM/AA">
+                            </div>
+                            <div class="form-group">
+                                <label for="cvv">Code de sécurité</label>
+                                <input type="text" id="cvv" required placeholder="123">
+                            </div>
+                        </div>
+                        <button type="button" onclick="processPayment()">Payer 35.000 €</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Écran de chargement -->
+        <div class="loading-overlay">
+            <div class="spinner"></div>
+        </div>
+
+        <!-- Page de succès -->
+        <div class="success-page">
+            <div class="success-icon">
+                <svg viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+                </svg>
+            </div>
+            <h2>Paiement confirmé !</h2>
+            <p>Votre commande a été traitée avec succès.</p>
+            <p>Un email de confirmation vous sera envoyé dans quelques minutes.</p>
+            <a href="index.html" class="button">Retourner à l'accueil</a>
+        </div>
+    </div>
+    <section class="footer">
+        <footer>
+            <div class="logos-sociaux">
+                <a href="https://fr-fr.facebook.com/"><img src="facebook.png" alt="Image" height="42" width="42"></a>
+                <a href="https://www.instagram.com/?hl=fr"><img src="instagram.png" alt="Image" height="42" width="42"></a>
+                <a href="https://twitter.com/Log%20in/"><img src="twitter.png" alt="Image" height="42" width="42"></a>
+            </div>
+            <div class="infos-contact">
+                <p>
+                    <strong>Adresse Postale : </strong>Voiti Nèf, Rue des Palmiers, Pointe-à-Pitre, Guadeloupe <br>
+                </p>
+                <a href="Conditions générale d'utilisation.html">Conditions Générales d'utilisation</a>
+                <p><strong>© 2025 Voiti Nèf Guadeloupe. Tous droits réservés.</strong></p> 
+            </div>
+        </footer>
+    </section>
+    
+</body>
+</html>

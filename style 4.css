@@ -1,0 +1,395 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Poppins:wght@400;600;700&display=swap');
+
+:root 
+{
+    /*Charte Graphique*/
+    --color-bordeaux: #800020;
+    --color-white: #ffffff;
+}
+        
+*
+{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+body 
+{
+    line-height: 1.5;
+    font-size: 16px;
+    overflow-x: hidden;
+}
+
+/*Menu*/
+.navbar
+{
+    background: var(--color-white);
+    position: fixed;
+    left: 0; 
+    right: 0;
+    top: 0;
+    bottom: 50px;
+    height: 145px;
+    padding: 0 30px;
+    border-right: 1px solid var(--color-bordeaux);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+.nav
+{
+    position: relative;
+    right: 50px;
+}
+
+.navdiv
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.navdiv .logo img
+{
+    margin-top: 10px;
+    max-width: 12%;
+    border-radius: 15%;
+}
+
+.logo a
+{
+    font-size: 35px;
+    font-weight: 600;
+    color: white;
+}
+
+li
+{
+    list-style: none;
+    display: inline-block;
+    transition: transform 0.3s ease;
+
+}
+
+a
+{
+    justify-content: space-between;
+}
+
+li a
+{
+    color: var(--color-bordeaux);
+    font-size: 18px;
+    font-weight: bold;
+}
+
+li:hover
+{
+    transform: scale(1.05);
+}
+
+/* Accueil*/
+.main-container 
+{
+    min-height: 200vh;
+    background: var(--color-bordeaux);
+    padding: 30px;
+    color: var(--color-white);
+
+}
+
+.section-title 
+{
+    position:absolute;
+    text-align: center;
+    margin: 50px 0;
+    top: 150px;
+    left: 585px;
+}
+
+.section-title h1 
+{
+    font-family: 'Dancing Script', cursive;
+    font-size: 70px;
+    display: inline-block;
+    position: relative;
+    padding: 20px;
+    
+}
+
+.section-title h1::before,
+.section-title h1::after 
+{
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+}
+
+.section-title h1::before 
+{
+    border-bottom: 5px solid var(--color-white);
+    border-left: 5px solid var(--color-white);
+    bottom: 0;
+    left: 0;
+}
+
+.section-title h1::after 
+{
+    border-top: 5px solid var(--color-white);
+    border-right: 5px solid var(--color-white) ;
+    top: 0;
+    right: 0;
+}
+.button 
+{
+    display: inline-block;
+    padding: 12px 35px;
+    background: var(--color-white);
+    color: var(--color-bordeaux);
+    text-decoration: none;
+    border-radius: 40px;
+    font-weight: 600;
+    transition: transform 0.3s ease;
+}
+
+.button:hover 
+{
+    transform: scale(1.05);
+}
+
+/*Carousel*/
+.carousel 
+{
+    position: absolute;
+    max-width: 900px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 3%;
+    margin-top: 750px;
+    margin-left: 300px;
+}
+
+.carousel-inner 
+{
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide 
+{
+    min-width: 100%;
+}
+
+.slide img 
+{
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.carousel-controls 
+{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.carousel-controls button 
+{
+    background: rgba(255, 255, 255, 0.7);
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.carousel-controls button:hover 
+{
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.carousel-dots 
+{
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.dot 
+{
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+}
+
+.dot.active 
+{
+    background: var(--color-white);
+}
+
+/* Nos Voitures*/
+.car .car-item 
+{
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    display: inline-block;
+    max-width: 1200px;
+    margin-top: 500px;
+    margin-left: 75px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.car .car-item:hover
+{
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.car .car-item img
+{
+    max-width: 100%;
+    max-height: 150px;
+    margin-bottom: 15px;
+}
+
+.car .car-item a
+{    display: inline-block;
+    padding: 12px 35px;
+    background: var(--color-bordeaux);
+    color: var(--color-white);
+    text-decoration: none;
+    border-radius: 40px;
+    font-weight: 600;
+    transition: transform 0.3s ease;
+}
+
+.car .car-item .car-info p
+{
+    font-size: 20px;
+    text-align: left;
+    padding-left: 20px;
+    padding-bottom: 25px;
+    color: #800020;
+}
+
+.car .car-item .car-info h1
+{
+    color: #800020;
+    padding-bottom: 20px;
+}
+
+/*Footer*/
+footer
+{  
+    background-color: var(--color-white);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1px;
+    position:relative; 
+    bottom:0;
+    width: 100;
+    left: 0%;
+    right: 0%;
+}
+.footer
+{
+    background-color: #ffffff;
+}
+
+.logos-sociaux 
+{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 20px;
+    top: 10px;
+    transition: all 0.3s ease;
+}
+
+.logos-sociaux a img 
+{
+    height: 42px;
+    width: 42px;
+    padding: 2px;
+}
+
+.logos-sociaux a img:hover
+{
+    transform: scale(1.05);
+}
+
+.infos-contact 
+{
+    justify-content: space-between;
+    color: white;
+}
+
+.infos-contact p
+{
+    margin: 5px 0;
+    color: #800020;
+}
+.histoire
+{
+    border-radius: 2px;
+    background-color: white;
+    padding: 400px;
+    justify-content: center;
+}
+.Historique,p
+{
+    color: white;
+}
+.Historique
+{
+    border-radius: 2px;
+    background-color: #800020;
+    padding: 400px;
+    justify-content: center;
+
+}
+.info-conditions
+{
+    border-radius: 2px;
+    background-color: var(--color-bordeaux);
+    padding: 400px;
+    justify-content: center;
+}
+.info-conditions a
+{
+    position: relative;
+    top: 40px;
+}
+
+.info-conditions p 
+{
+    font-size: 18px;
+    margin-bottom: 50px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
